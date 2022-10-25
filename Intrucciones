@@ -1,0 +1,53 @@
+Creación de un proyecto de react con vite.
+Con el primer comando se crea el proyecto y con el segundo se descargan todo el node_modules.
+
+-npm create vite@latest nombre_proyecto
+-npm install
+
+A continuacion creamos el .editorconfig con clic derecho y dentro del mismo con estos settings.
+
+#############################
+root = true
+
+[*]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = false
+insert_final_newline = false
+#############################
+
+Una vez ya listo los siguiente es instalar eslint, airbnb y prettier con el siguiente comando
+
+-npm install --save-dev eslint eslint-config-airbnb prettier
+
+Una vez instalado en el archivo package.json introduciremos los siguientes scripts.
+
+#############################
+ "scripts": {
+    "start": "vite",                                                  <---
+    "lint": "eslint --fix src/**/*.{js,jsx}",                         <---
+    "format": "prettier --write src/**/*.{html,css,js,jsx,json}",     <---
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+#############################
+
+El siguiente paso seria activar eslint con el siguiente comando el cual por defecto es
+todo siguiente, excepto en un paso donde se debe elegir JSON en vez de Javascript.
+
+-  .\node_modules\.bin\eslint --init
+
+Esto generara el archivo .eslintrc.json donde añadiremos lo siguiente borrando lo anterior
+
+#############################
+  "extends": [
+        "airbnb"                                                      <---
+    ],
+#############################
+
+Una vez ya tenemos esto podemos iniciar nuestro proyecto con el comando 
+ 
+-npm start
+
