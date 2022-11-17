@@ -19,7 +19,7 @@ import WishItem from './WishItem';
  * @param {onUpdateWish} Callback - Callback to run when a wish changes.
  * @returns HTML with a wish list.
  */
-function WishList({ wishes, onUpdateWish }) {
+function WishList({ wishes, onUpdateWish, onDeleteWish }) {
   return (
     <ul className="list-group">
       {wishes.map(({ id, text, done }) => (
@@ -28,6 +28,9 @@ function WishList({ wishes, onUpdateWish }) {
           key={`wishItem-${id}`}
           onChangeWish = {(updateWish) => {
             onUpdateWish(updateWish);
+          }}
+          onDeleteWish = {(deleteWish) => {
+            onDeleteWish(deleteWish);
           }}
         />
       ))}

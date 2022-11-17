@@ -9,33 +9,39 @@ import Button from 'react-bootstrap/Button';
 function WishItem({ wish, onChangeWish, onDeleteWish }) {
   const [d_btn, setd_btn] = useState('none');
   return (
-    <li className="list-group-item" onMouseOver={() => { setd_btn('') }} onMouseOut={() => { setd_btn('none') }}>
-      <input
-        type="checkbox"
-        defaultChecked={wish.done}
-        id={wish.id}
-        onChange={(event) => {
-          onChangeWish({
-            id: wish.id,
-            text: wish.text,
-            done: event.target.checked,
-          });
-        }}
-      />
+    <li className="list-group-item d-flex align-items-center" onMouseOver={() => { setd_btn('inline-flex') }} onMouseOut={() => { setd_btn('none') }}>
+      <label className='label'>
+        <input
+          type="checkbox"
+          defaultChecked={wish.done}
+          id={wish.id}
+          onChange={(event) => {
+            onChangeWish({
+              id: wish.id,
+              text: wish.text,
+              done: event.target.checked,
+            });
+          }}
+        />
+        <span class="checkbox"></span>
+      </label>
+
 
       <label
         className={classNames(
           { 'text-decoration-line-through': wish.done },
         )}
-        htmlFor={wish.text}>
+         htmlFor={wish.text}>
         {wish.text}
       </label>
 
-      <Button style={{ display: d_btn }} variant='info' onClick={() => {
-        onDeleteWish({id: wish.id,
+      <Button style={{ display: d_btn }} className='delete-btn' variant='info' onClick={() => {
+        onDeleteWish({
+          id: wish.id,
           text: wish.text,
-          done: wish.done});
-       }}><MdDelete /></Button>
+          done: wish.done
+        });
+      }}><MdDelete size='24px' /></Button>
 
     </li>
   );
