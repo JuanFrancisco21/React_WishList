@@ -19,11 +19,8 @@ function App() {
     { id: Uuidv4(), text: 'Desayunar', done: true },
   ]);
 
-  console.log("hola");
-  
   //On Init, carga los datos almacenados al cargar la pagina.
   useEffect(() => {
-    console.log(JSON.parse(localStorage.getItem('wishes')));
     setWishes(JSON.parse(localStorage.getItem('wishes')) || initialWishes);
   }, []);
 
@@ -55,6 +52,13 @@ function App() {
           modifyWish.done = updateWish.done;
           setWishes(updateWishes);
           */
+        }}
+        onDeleteWish={(deleteWish) => {
+          // Metodo 1 para Borrar un deseo de la lista
+          setWishes((prevState) =>
+            prevState.filter((wish) => deleteWish.id !== wish.id)
+          )
+
         }} />
     </div>
   );
