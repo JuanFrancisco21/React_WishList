@@ -1,16 +1,21 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import PropTypes from 'prop-types';
+import { v4 as Uuidv4 } from 'uuid';
 
-function Wishinput({onNewWish}) {
-  let newWishText='';
+function WishInput({ onNewWish }) {
+  const inputText = useRef();
   return (
-    <fieldset className='form-group'>
+    <fieldset className="form-group">
       <legend>New Wish</legend>
-      <input className='form-control' type="text" placeholder='Introduce tu deseo'
+      <input
+        className="form-control"
+        type="text"
+        placeholder="Introduce tu deseo"
+        ref={inputText}
         onKeyUp={(event) => {
           if (event.key === 'Enter' && event.target.value.length > 0) {
-            newWishText = event.target.value;
-            console.log(newWishText);
-            onNewWish({text: event.target.value, done: false})
+            onNewWish({ id: Uuidv4(), text: event.target.value, done: false });
+            inputText.current.value = '';
           }
         }}
       />
@@ -18,5 +23,12 @@ function Wishinput({onNewWish}) {
   );
 }
 
+WishInput.propTypes = {
+  onNewWish: PropTypes.func,
+};
 
-export default Wishinput;
+WishInput.defaultProps = {
+  onNewWish: () => {},
+};
+
+export default WishInput;
