@@ -1,0 +1,24 @@
+@mixin center-align {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 5px 5px ;
+  width: 100%;
+}
+
+.search-bar{
+  display: grid;
+  grid-template-areas: "search create";
+  grid-template-columns: 12fr 2fr;
+  
+  
+}
+
+.search{
+  grid-area: search;  
+  @include center-align;
+}
+.create{
+  grid-area: create;
+  @include center-align;
+}
