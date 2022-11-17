@@ -5,6 +5,7 @@ import WishInput from './components/WishInput';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min';
 import './App.css';
+import Navbar from './components/Navbar';
 
 /**
  * Main file, to create a HTML web with components.
@@ -21,7 +22,7 @@ function App() {
 
   //On Init, carga los datos almacenados al cargar la pagina.
   useEffect(() => {
-    setWishes(JSON.parse(localStorage.getItem('wishes')) || initialWishes);
+    setWishes(JSON.parse(localStorage.getItem('wishes')) || wishes);
   }, []);
 
   //Guarda la lista de deseos cuando se modifica la lista de wishes
@@ -32,34 +33,39 @@ function App() {
 
   return (
     <div className="container-fluid">
-      <h1>My WishList</h1>
-      <WishInput onNewWish={(newwish) => {
-        setWishes([...wishes, newwish]);
-      }}
-      />
-      <WishList
-        wishes={wishes}
-        onUpdateWish={(updateWish) => {
-          // Metodo 1 para actualizar wish de la lista
-          setWishes(wishes.map(wish =>
-            (wish.id == updateWish.id) ? updateWish : wish
-          ));
 
-          // Metodo 2 para actualizar wish de la lista
-          /*
-          const updateWishes = [...wishes];
-          const modifyWish = updateWishes.finf(wish => wish.id === updateWish.id);
-          modifyWish.done = updateWish.done;
-          setWishes(updateWishes);
-          */
+      <Navbar />
+
+      <section>
+        <WishInput onNewWish={(newwish) => {
+          setWishes([...wishes, newwish]);
         }}
-        onDeleteWish={(deleteWish) => {
-          // Metodo 1 para Borrar un deseo de la lista
-          setWishes((prevState) =>
-            prevState.filter((wish) => deleteWish.id !== wish.id)
-          )
+        />
+        <WishList
+          wishes={wishes}
+          onUpdateWish={(updateWish) => {
+            // Metodo 1 para actualizar wish de la lista
+            setWishes(wishes.map(wish =>
+              (wish.id == updateWish.id) ? updateWish : wish
+            ));
 
-        }} />
+            // Metodo 2 para actualizar wish de la lista
+            /*
+            const updateWishes = [...wishes];
+            const modifyWish = updateWishes.finf(wish => wish.id === updateWish.id);
+            modifyWish.done = updateWish.done;
+            setWishes(updateWishes);
+            */
+          }}
+          onDeleteWish={(deleteWish) => {
+            // Metodo 1 para Borrar un deseo de la lista
+            setWishes((prevState) =>
+              prevState.filter((wish) => deleteWish.id !== wish.id)
+            )
+
+          }} />
+
+      </section>
     </div>
   );
 }

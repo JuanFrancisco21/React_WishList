@@ -23,6 +23,10 @@
   box-shadow: 0 0 0 0.15vw royalblue;
 }
 
+.delete-btn {
+  margin-left: auto;
+}
+
 .create-btn {
   height: 80%;
   font-family: inherit;
@@ -53,7 +57,7 @@
           animation: fly-1 0.6s ease-in-out infinite alternate;
 }
 .create-btn:hover svg {
-  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+  transform: translateX(1.65em) rotate(90deg) scale(1.1);
 }
 .create-btn:hover .span {
   transform: translateX(5em);
@@ -79,6 +83,58 @@
     transform: translateY(-0.1em);
   }
 }
+.label {
+  width: 20px;
+  height: 20px;
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+input[type=checkbox] {
+  position: absolute;
+  transform: scale(0);
+}
+input[type=checkbox]:checked ~ .checkbox {
+  transform: rotate(45deg);
+  width: 14px;
+  margin-left: 5px;
+  border-color: #24c78e;
+  border-width: 5px;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-radius: 0;
+}
+
+.checkbox {
+  display: block;
+  width: inherit;
+  height: inherit;
+  border: solid 3px rgba(42, 42, 42, 0.7176470588);
+  border-radius: 6px;
+  transition: all 0.375s;
+}
+
+#navBar {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  width: auto;
+  color: white;
+  height: 40px;
+}
+#navBar img {
+  margin-right: 15px;
+}
+
+section {
+  margin: 10px 10vw;
+}
+
+.container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
 .search-bar {
   display: grid;
   grid-template-areas: "search create";
