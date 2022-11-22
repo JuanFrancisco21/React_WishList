@@ -23,7 +23,7 @@ function WishItem({ wish, onChangeWish, onDeleteWish }) {
             });
           }}
         />
-        <span class="checkbox"></span>
+        <span className="checkbox"></span>
       </label>
 
 
@@ -34,7 +34,9 @@ function WishItem({ wish, onChangeWish, onDeleteWish }) {
          htmlFor={wish.text}>
         {wish.text}
       </label>
+      <div >
 
+      </div>
       <Button style={{ display: d_btn }} className='delete-btn' variant='info' onClick={() => {
         onDeleteWish({
           id: wish.id,
