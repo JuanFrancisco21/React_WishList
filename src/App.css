@@ -57,7 +57,7 @@
           animation: fly-1 0.6s ease-in-out infinite alternate;
 }
 .create-btn:hover svg {
-  transform: translateX(1.65em) rotate(90deg) scale(1.1);
+  transform: translateX(1.65em) rotate(360deg) scale(1.1);
 }
 .create-btn:hover .span {
   transform: translateX(5em);
