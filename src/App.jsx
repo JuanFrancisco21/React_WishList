@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { v4 as Uuidv4 } from 'uuid';
-import WishList from './components/WishList';
-import WishInput from './components/WishInput';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.min';
-import './App.css';
-import Navbar from './components/Navbar';
+import React, { useState, useEffect } from "react";
+import { v4 as Uuidv4 } from "uuid";
+import WishList from "./components/WishList";
+import WishInput from "./components/WishInput";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min";
+import "./App.css";
+import Navbar from "./components/Navbar";
 
 /**
  * Main file, to create a HTML web with components.
@@ -14,10 +14,10 @@ import Navbar from './components/Navbar';
 function App() {
   //Main list to storage all wishes used.
   const [wishes, setWishes] = useState([
-    { id: Uuidv4(), text: 'Aprender React', done: false },
-    { id: Uuidv4(), text: 'Da de alta a los alumnos', done: true },
-    { id: Uuidv4(), text: 'Preparar apuntes', done: false },
-    { id: Uuidv4(), text: 'Desayunar', done: true },
+    { id: Uuidv4(), text: "Aprender React", done: false },
+    { id: Uuidv4(), text: "Da de alta a los alumnos", done: true },
+    { id: Uuidv4(), text: "Preparar apuntes", done: false },
+    { id: Uuidv4(), text: "Desayunar", done: true },
   ]);
   //value for filtered list by user text.
   const [searchWishes, setsearchWishes] = useState([]);
@@ -27,18 +27,21 @@ function App() {
 
   //On Init, save list into navigatos localstorage.
   useEffect(() => {
-    setWishes(JSON.parse(localStorage.getItem('wishes')) || wishes);
+    setWishes(JSON.parse(localStorage.getItem("wishes")) || wishes);
   }, []);
 
   //If the list wishes changes, it save in localstorage.
   useEffect(() => {
-    localStorage.setItem('wishes', JSON.stringify(wishes));
+    localStorage.setItem("wishes", JSON.stringify(wishes));
   }, [wishes]);
 
+  //Function to refresh the page when some wish is updated.
+  function refreshPage() {
+    window.location.reload(false);
+  }
 
   return (
     <div className="container-fluid">
-
       <Navbar />
 
       <section>
@@ -49,29 +52,33 @@ function App() {
           onSearchWish={(searchData) => {
             //Conditional where if is introduce text to search filter the list.
             if (searchData.text.length > 0) {
-              const result = Object.values(wishes).filter((wish) => wish.text.toLowerCase()
-                .includes(searchData.text.toLowerCase()));
+              const result = Object.values(wishes).filter((wish) =>
+                wish.text.toLowerCase().includes(searchData.text.toLowerCase())
+              );
 
               setsearchWishes(result);
 
               if (result.length <= 0) {
-                setsearchWishes([{ id: Uuidv4(), text: 'Wish not found...', done: false }]);
+                setsearchWishes([
+                  { id: Uuidv4(), text: "Wish not found...", done: false },
+                ]);
               }
             } else {
-              setsearchWishes((prevState) =>
-                prevState.filter(() => false)
-              );
+              setsearchWishes((prevState) => prevState.filter(() => false));
             }
           }}
         />
 
         <WishList
-          wishes={(searchWishes.length > 0) ? searchWishes : wishes}
+          wishes={searchWishes.length > 0 ? searchWishes : wishes}
           onUpdateWish={(updateWish) => {
             // Metodo 1 para actualizar wish de la lista
-            setWishes(wishes.map(wish =>
-              (wish.id == updateWish.id) ? updateWish : wish
-            ));
+            setWishes(
+              wishes.map((wish) =>
+                wish.id == updateWish.id ? updateWish : wish
+              )
+            );
+            refreshPage();
 
             // Metodo 2 para actualizar wish de la lista
             /*
@@ -85,10 +92,9 @@ function App() {
             // Metodo 1 para Borrar un deseo de la lista
             setWishes((prevState) =>
               prevState.filter((wish) => deleteWish.id !== wish.id)
-            )
-
-          }} />
-
+            );
+          }}
+        />
       </section>
     </div>
   );

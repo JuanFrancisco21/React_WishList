@@ -14,7 +14,8 @@ function WishCreateModal( props ) {
     const text = inputNewWish.current.value;
     if (text != '' && text != ' ' ) {
       props.newwish({id: Uuidv4(), text: inputNewWish.current.value, done:false});
-      props.onHide;
+    }else{
+      alert(("Introduce text for a new wish."));
     }
   };
 
