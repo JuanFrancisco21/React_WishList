@@ -1,6 +1,7 @@
 $theme-colors: (
         "info": rgb(255, 89, 71),
-        "danger": teal
+        "edit": rgb(0, 175, 175),
+        
 );
 
 
@@ -29,8 +30,9 @@ $theme-colors: (
 }
 
 //  Atributos css para el boton de crear wishlist
-  .delete-btn{ 
+  .item-btn{ 
     margin-left: auto;
+    justify-content: space-between; 
   }
 
  .create-btn {
