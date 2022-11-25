@@ -4,6 +4,8 @@
         "es2021": true
     },
     "extends": [
+        "plugin:react/recommended",
+        "standard",
         "airbnb"
     ],
     "overrides": [
@@ -16,5 +18,7 @@
         "react"
     ],
     "rules": {
+       "react/jsx-props-no-spreading": "off"
+
     }
 }
