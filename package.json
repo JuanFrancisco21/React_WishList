@@ -7,9 +7,10 @@
     "start": "vite",
     "lint": "eslint --fix src/**/*.{js,jsx}",
     "format": "prettier --write src/**/*.{html,css,js,jsx,json}",
-    "doc": "jsdoc .r -d ./doc -R README.md ./src",
+    "doc": "jsdoc -R ./README.md -d ./doc ./src",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "docs": "jsdoc -c jsdoc.json"
   },
   "dependencies": {
     "boostrap": "^2.0.0",

@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 /**
+ * 
  * Callback to create the new wish.
  * @callback newWish - Callback send the new wish.
  * @param {object} wish - Wish with values.
@@ -14,17 +15,20 @@ import Modal from 'react-bootstrap/Modal';
  */
 
 /**
+ * 
  * Callback to hide the modal view.
  * @callback onHide - Callback to hide the modal view.
  */
 
 /**
+ * 
  * Callback to show the modal view.
  * @callback showModal - Callback to show the modal view.
  * @param {boolean} showModal - Set at true Modal tag to make it visible.
  */
 
 /**
+ * 
  * Show a Modal page to create a wish.
  * @param {onHide} Callback - Callback to hide the modal view.
  * @param {showModal} Callback - Callback to show the modal view.

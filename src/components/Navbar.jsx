@@ -2,6 +2,11 @@ import React from 'react';
 import { Container, Navbar } from 'react-bootstrap';
 import Logo from '../assets/Logo.png';
 
+/**
+ * 
+ * Header navBar to locate routes links and logo.
+ * @returns HTML with navbar in html and css.
+ */
 function Nav() {
   return (
     <Navbar bg="dark" variant="dark">

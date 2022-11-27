@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import WishCreateModal from './Modals/WishCreateModal';
 
 /**
+ * 
  * Callback to create a new wish.
  * @callback oncreateNewWish - Callback to create a new wish.
  * @param {object} wish - Wish with new values.
@@ -12,12 +13,14 @@ import WishCreateModal from './Modals/WishCreateModal';
  */
 
 /**
+ * 
  * Callback to run when introduce text to search wishes.
  * @callback onSearchWish - Callback to run to search wishes.
  * @param {string} onSearchWish.text - Text to find wishes with this text.
  */
 
 /**
+ * 
  * Manage the search wishes input and create wish button.
  * @param {oncreateNewWish} Callback - Callback to run when a new wish is created.
  * @param {onSearchWish} Callback - Callback to run when we search some wishes by text.
