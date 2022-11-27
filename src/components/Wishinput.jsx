@@ -1,13 +1,37 @@
-import React, { useRef } from "react";
-import PropTypes from "prop-types";
-import WishCreateModal from "./Modals/WishCreateModal";
+import React, { useRef, useState } from 'react';
+import PropTypes from 'prop-types';
+import WishCreateModal from './Modals/WishCreateModal';
 
+/**
+ * 
+ * Callback to create a new wish.
+ * @callback oncreateNewWish - Callback to create a new wish.
+ * @param {object} wish - Wish with new values.
+ * @param {string} wish.id - Identifier for wish.
+ * @param {string} wish.text - Text of wish to do.
+ * @param {boolean} wish.done - Boolean of wish to know if it is done (Default: false).
+ */
+
+/**
+ * 
+ * Callback to run when introduce text to search wishes.
+ * @callback onSearchWish - Callback to run to search wishes.
+ * @param {string} onSearchWish.text - Text to find wishes with this text.
+ */
+
+/**
+ * 
+ * Manage the search wishes input and create wish button.
+ * @param {oncreateNewWish} Callback - Callback to run when a new wish is created.
+ * @param {onSearchWish} Callback - Callback to run when we search some wishes by text.
+ * @returns HTML with a input tag and a create wish button.
+ */
 function WishInput({ oncreateNewWish, onSearchWish }) {
-  //Text from the search imput
+  // Text from the search imput
   const inputSearchWish = useRef();
 
-  //Var to show modal view
-  const [modalShow, setModalShow] = React.useState(false);
+  // Var to show modal view
+  const [modalShow, setModalShow] = useState(false);
 
   return (
     <fieldset className="form-group">
@@ -23,14 +47,14 @@ function WishInput({ oncreateNewWish, onSearchWish }) {
               if (event.target.value.length > 0) {
                 onSearchWish({ text: event.target.value });
               } else {
-                onSearchWish({ text: "" });
+                onSearchWish({ text: '' });
               }
             }}
           />
         </div>
 
         <div className="create">
-          <button className="create-btn" onClick={() => setModalShow(true)}>
+          <button className="create-btn" type="button" onClick={() => setModalShow(true)}>
             <div className="svg-wrapper-1">
               <div className="svg-wrapper">
                 <svg
@@ -48,9 +72,9 @@ function WishInput({ oncreateNewWish, onSearchWish }) {
           </button>
 
           <WishCreateModal
-            show={modalShow}
+            showModal={modalShow}
             onHide={() => setModalShow(false)}
-            newwish={(wish) => {
+            newWish={(wish) => {
               oncreateNewWish(wish);
               setModalShow(false);
             }}
@@ -60,6 +84,8 @@ function WishInput({ oncreateNewWish, onSearchWish }) {
     </fieldset>
   );
 }
+
+// Proptypes for all component functions, objects and variables
 
 WishInput.propTypes = {
   oncreateNewWish: PropTypes.func,
