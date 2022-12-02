@@ -42,6 +42,150 @@
 
 
 
+    <section>
+        <article><h1>Desarrolo Web en Entorno Cliente</h1>
+<h2>WishList</h2>
+<img src="./public/Logo.png" alt="drawing" style="width:300px;"/>
+<p><a href="https://github.com/JuanFrancisco21">Juan Francisco Aguilar Sanchez</a></p>
+<p>24 de noviembre de 2022                                      I.E.S Francisco de los Rios</p>
+<br>
+<h2>Índice</h2>
+<ol>
+<li><a href="#id1">Descripción del proyecto</a></li>
+<li><a href="#id2">Características</a></li>
+<li><a href="#id3">Instalación</a></li>
+<li><a href="#id4">Manual de uso</a></li>
+<li><a href="#id5">Licencia</a></li>
+</ol>
+<br>
+<!----------------------------- DESCRIPCION DEL PROYECTO -------------------------------->
+<h1>Descripcion React Wishlist <a name="id1"></a></h1>
+<p>Este es un proyecto desarrollado en la asignatura de Desarrolo Web en Entorno Cliente, impartida por Rafael Morales.</p>
+<p>Como actividad para su evaluacion se nos ha requerido de la creación de un proyecto con el framework de react. En el cual debemos aplicar los conocimientos adquiridos tanto en dicho framework como en javascript, para la creación de una lista de deseos en la cual poder, modificarlos a nuestro propio antojo.</p>
+<br>
+<!----------------------------- CARACTERISTICAS -------------------------------->
+<h1>Características <a name="id2"></a></h1>
+<p>En continuación de el proyecto &quot;Wishlist&quot; comenzado en clase se han disesñado las siguientes funcionalidades y requisitos:</p>
+<ul>
+<li>Incluir alguna imagen en la cabecera a modo de logo de la aplicación.</li>
+<li>Mostrar una lista de deseos con un checkbox que permita marcar el deseo como completado. Una vez marcado el deseo debe mostrarse diferente al resto, por ejemplo tachando el texto.</li>
+<li>Permitir añadir deseos nuevos simplemente pulsando la tecla intro en el campo de texto.</li>
+<li>Añadir un botón que también sirva para añadir el texto del nuevo deseo a la lista.</li>
+<li>Almacenar deseos en el almacenamiento local del navegador y recuperarlos automáticamente al abrir la aplicación.</li>
+<li>Eliminar un deseo concreto de la lista.</li>
+<li>Editar un deseo concreto de la lista, mediante la edición en línea del texto, mediante un modal, etc.</li>
+<li>Reordenar los deseos de la lista, arrastrando los deseos, mediante iconos para subir o bajar el deseo, etc.</li>
+<li>Buscar deseos, la lista se filtrará mostrando sólo los que correspondan con la búsqueda. Incluir algún proceso para eliminar esa búsqueda y que vuelvan a aparecer todos los deseos.</li>
+</ul>
+<br>
+<!----------------------------- INSTALACION -------------------------------->
+<h1>Instalación <a name="id3"></a></h1>
+<p>La instalación de un proyecto de react es de las mas básicas de realizar, tanto es así que solo se requiere de un comando, para empezar a utilizarlo.</p>
+<ul>
+<li>Este seria install para añadir todos las librerias necesarias y nombradas en el archivo package.json</li>
+</ul>
+<pre class="prettyprint source"><code>npm install
+</code></pre>
+<ul>
+<li>Una vez ejecutado este comando notaremos la aparición de la carpeta node_modules, carpeta la cual aloja todas las librerias usadas.</li>
+</ul>
+ <br>
+<ul>
+<li>Para generar las diferentes carpetas mostradas en las imagen siguiente, una de ellas 'dist' esta expliacado en el apartado de Manual de Uso y para la creación de la documentación situada en la carpeta docs, seria con el siguiente comando</li>
+</ul>
+<pre class="prettyprint source"><code>npm run docs
+</code></pre>
+ <br>
+<img src="./public/estructura.png" alt="instalacion" style="width:200px;"/>
+ <br>
+<!----------------------------- MANUAL DE USO -------------------------------->
+<h1>Manual de uso <a name="id4"></a></h1>
+<p>Muy bien ahora ya que ya estan todos los paketes de la carpeta node-modules instalados ejecutaremos el proyecto. Con el siguiente comando:</p>
+<ul>
+<li>Con un comando ya predefinido en el package.json lo iniciaremos.</li>
+</ul>
+<pre class="prettyprint source"><code>npm run start
+</code></pre>
+<img src="./public/start.png" alt="start command" style="width:600px;"/>
+<ul>
+<li>En caso de que queramos usar la build creada utilizaremos el comando build seguidamente del comando preview.</li>
+</ul>
+<pre class="prettyprint source"><code>npm run build
+npm run preview
+</code></pre>
+<ul>
+<li>El primer comando nos generará una carpeta llamada dist donde estara todo el proyecto compilado y listo para el despliege del mismo en cualquier plataforma. Finalizando con el comando preview el cual ejecuta dicha carpeta para comprobar de ultima mano su correcto funcionamiento.</li>
+</ul>
+<img src="./public/preview.png" alt="preview command" style="width:600px;"/>
+ <br>
+<h3>Una vez que tenemos desplegado nuestro proyecto ya sea en local como alojado en un servicio web podremos utilizar las diferentes funciones basicas:</h3>
+ <br>
+<ol>
+<li>Barra de busqueda de deseos.</li>
+<li>Boton para creación de nuevos deseos.</li>
+<li>Checkbox para marcar tarea como realizada.</li>
+<li>Boton de editar deseo.</li>
+<li>Boton para borrar un deseo.</li>
+</ol>
+ <br>
+<img src="./public/manual.png" alt="manual indice" style="width:600px;"/>
+ <br>
+<h2>1. Barra de busqueda de deseos.</h2>
+<p>Introduciendo datos en este input obtendremos un listado con los deseos que coincidan con el texto introducido, salvo en le caso de que se no se encuentre ninguna conincidencia donde se mostrara un texto donde leeremos deseos no encontrados.</p>
+ <br>
+<img src="./public/search.png" alt="barra de busqueda" style="width:400px;"/>
+ <br>
+<h2>2. Boton para creación de nuevos deseos.</h2>
+<p>Como ya se ha mencionado anteriormente, uno de los requisitos era disponer de un boton para la creación de nuevos deseos, en este caso esta diseñado para abrir una pantalla modal en la cual introduciremos el texto del nuevo deseo a crear y se dispone de dos formas de crearlo, pulsando en el boton de crear o pulsando la tecla 'Enter'.</p>
+ <br>
+<img src="./public/create.png" alt="modal de creacion" style="width:400px;"/>
+ <br>
+<h2>3. Checkbox para marcar tarea como realizada.</h2>
+<p>En el caso del marcaje de los deseos realizados se utilizan los checkbox situados a la izquierda del texto. Cuando a uno de ellos lo marcamos como completo cambia el texto y se muestra tachado. Este se activa simplemente pulsando con el raton encima de el.</p>
+ <br>
+<h2>4. Boton de editar deseo.</h2>
+<p>Otro requisito básico de cualquier software del que dispone de un CRUD esta es la forma de editar los diferentes deseos. Para facilitar al usuario su experiencia al igual que el boton de crear, para editar se muestra en una pantalla modal pudiendo ejecutarlo solamente pulsando en el boton de crear o pulsando la tecla 'Enter'.</p>
+ <br>
+<img src="./public/editar.png" alt="modal para editar" style="width:400px;"/>
+ <br>
+<h2>5. Boton para borrar un deseo.</h2>
+<p>Como ultima función se dispone de un boton de borrado de deseos, el cual al pulsarlo directamente se borrará diho deseo. Una futura implementación seria la confirmación mediante una alerta para mayor seguridad del borrado de datos sensibles.</p>
+ <br>
+ <br>
+<!----------------------------- LICENCIA -------------------------------->
+<h1>Licencia (Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional)<a name="id5" ></a></h1>
+<h2>Usted es libre de:</h2>
+<ul>
+<li>Compartir - copiar y redistribuir el material en cualquier medio o formato</li>
+<li>Adaptar - remezclar, transformar y construir sobre el material</li>
+<li>El licenciante no puede revocar estas libertades siempre que se respeten los términos de la licencia.</li>
+</ul>
+<br>
+<h2>Bajo los siguientes términos:</h2>
+<ul>
+<li>
+<p><code>Atribución</code> - Debe dar el crédito apropiado, proporcionar un enlace a la licencia e indicar si se hicieron cambios. Puede hacerlo de cualquier forma razonable, pero no de ninguna manera que sugiera que el licenciante lo respalda a usted o a su uso.</p>
+</li>
+<li>
+<p><code>No comercial</code> - No puede utilizar el material con fines comerciales.</p>
+</li>
+<li>
+<p><code>CompartirIgual</code> - Si usted remezcla, transforma o construye sobre el material, debe distribuir sus contribuciones bajo la misma licencia que el original.</p>
+</li>
+<li>
+<p><code>Sin restricciones adicionales</code> - No puede aplicar términos legales o medidas tecnológicas que restrinjan legalmente a otros de hacer cualquier cosa que la licencia permita.</p>
+</li>
+</ul>
+<br>
+<!----------------------------- AUTOR -------------------------------->
+<h1>Author</h1>
+<p><a href="https://github.com/JuanFrancisco21">Juan Francisco Aguilar Sanchez</a></p>
+<br>
+<br>
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />Este obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">licencia de Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional</a>.</p>
+<br></article>
+    </section>
+
 
 
 
@@ -56,7 +200,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Sun Nov 27 2022 23:30:58 GMT+0100 (hora estándar de Europa central)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Mon Nov 28 2022 09:11:27 GMT+0100 (hora estándar de Europa central)
 </footer>
 
 <script> prettyPrint(); </script>
