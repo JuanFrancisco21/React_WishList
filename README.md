@@ -1,7 +1,7 @@
 # Desarrolo Web en Entorno Cliente 
 ## WishList
 
-<img src="public/Logo.png" alt="drawing" style="width:300px;"/>
+<img src="./public/Logo.png" alt="drawing" style="width:300px;"/>
    
 [Juan Francisco Aguilar Sanchez](https://github.com/JuanFrancisco21)
 
@@ -66,7 +66,7 @@ npm run docs
 
  <br>
 
-<img src="public/estructura.png" alt="instalacion" style="width:200px;"/>
+<img src="./public/estructura.png" alt="instalacion" style="width:200px;"/>
 
  <br>
 
@@ -80,7 +80,7 @@ Muy bien ahora ya que ya estan todos los paketes de la carpeta node-modules inst
 ```
 npm run start
 ```
-<img src="public/start.png" alt="start command" style="width:600px;"/>
+<img src="./public/start.png" alt="start command" style="width:600px;"/>
 
 - En caso de que queramos usar la build creada utilizaremos el comando build seguidamente del comando preview.
 
@@ -90,7 +90,7 @@ npm run preview
 ```
 - El primer comando nos generará una carpeta llamada dist donde estara todo el proyecto compilado y listo para el despliege del mismo en cualquier plataforma. Finalizando con el comando preview el cual ejecuta dicha carpeta para comprobar de ultima mano su correcto funcionamiento.
 
-<img src="public/preview.png" alt="preview command" style="width:600px;"/>
+<img src="./public/preview.png" alt="preview command" style="width:600px;"/>
 
  <br>
 
@@ -106,7 +106,7 @@ npm run preview
 
  <br>
 
-<img src="public/manual.png" alt="manual indice" style="width:600px;"/>
+<img src="./public/manual.png" alt="manual indice" style="width:600px;"/>
 
  <br>
 
@@ -116,7 +116,7 @@ Introduciendo datos en este input obtendremos un listado con los deseos que coin
 
  <br>
 
-<img src="public/search.png" alt="barra de busqueda" style="width:400px;"/>
+<img src="./public/search.png" alt="barra de busqueda" style="width:400px;"/>
 
  <br>
 
@@ -125,7 +125,7 @@ Como ya se ha mencionado anteriormente, uno de los requisitos era disponer de un
 
  <br>
 
-<img src="public/create.png" alt="modal de creacion" style="width:400px;"/>
+<img src="./public/create.png" alt="modal de creacion" style="width:400px;"/>
 
  <br>
 
@@ -139,7 +139,7 @@ Otro requisito básico de cualquier software del que dispone de un CRUD esta es 
 
  <br>
 
-<img src="public/editar.png" alt="modal para editar" style="width:400px;"/>
+<img src="./public/editar.png" alt="modal para editar" style="width:400px;"/>
 
  <br>
 
